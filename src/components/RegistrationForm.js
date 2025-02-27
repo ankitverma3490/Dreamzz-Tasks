@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import   './styles.css';
 
 function  RegistrationForm() {
   const [user, setUser] = useState({
@@ -41,69 +42,15 @@ function  RegistrationForm() {
       });
       alert('Data saved successfully');
     }
-
-    console.log(user);
   };
-
-  const formStyle = {
-    width: '800px',
-    margin: '50px auto',
-    padding: '30px',
-    border: '1px solid #ddd',
-    borderRadius: '8px',
-    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-    backgroundColor: '#f9f9f9',
-  };
-
-  const inputGroupStyle = {
-    marginBottom: '20px',
-  };
-
-  const labelStyle = {
-    display: 'block',
-    marginBottom: '8px',
-    fontWeight: 'bold',
-    color: '#333',
-  };
-
-  const inputStyle = {
-    width: '100%',
-    padding: '10px',
-    border: '1px solid #ccc',
-    borderRadius: '4px',
-    boxSizing: 'border-box',
-    fontSize: '16px',
-  };
-
-  const textareaStyle = {
-    ...inputStyle,
-    resize: 'vertical',
-    minHeight: '100px',
-  };
-
-  const buttonStyle = {
-    backgroundColor: '#007bff',
-    color: 'white',
-    padding: '12px 20px',
-    border: 'none',
-    borderRadius: '4px',
-    cursor: 'pointer',
-    fontSize: '16px',
-    width: '100%',
-  };
-
-  const titleStyle = {
-      textAlign: 'center',
-      marginBottom: '20px',
-      color: '#333',
-  }
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-      <form onSubmit={handleSubmit} style={formStyle} method="post">
-        <h2 style={titleStyle}>Registration Form</h2>
-        <div style={inputGroupStyle}>
-          <label style={labelStyle}>Your Name</label>
+      <form onSubmit={handleSubmit} 
+      className='form' method="post">
+        <h2  className='title'>Registration Form</h2>
+        <div  className='input-group'>
+          <label className='label'>Your Name</label>
           <input
             name="name"
             type="text"
@@ -112,11 +59,11 @@ function  RegistrationForm() {
             required
             value={user.name}
             onChange={userData}
-            style={inputStyle}
+             className='input'
           />
         </div>
-        <div style={inputGroupStyle}>
-          <label style={labelStyle}>Your Email</label>
+        <div  className='input-group'>
+          <label  className='label'>Your Email</label>
           <input
             name="email"
             type="email"
@@ -125,11 +72,11 @@ function  RegistrationForm() {
             required
             value={user.email}
             onChange={userData}
-            style={inputStyle}
+             className='input'
           />
         </div>
-        <div style={inputGroupStyle}>
-          <label style={labelStyle}>Mobile Number</label>
+        <div  className='input-group'>
+          <label  className='label'>Mobile Number</label>
           <input
             name="mobile"
             type="number"
@@ -138,11 +85,11 @@ function  RegistrationForm() {
             required
             value={user.mobile}
             onChange={userData}
-            style={inputStyle}
+             className='input'
           />
         </div>
-        <div style={inputGroupStyle}>
-          <label style={labelStyle}>Address</label>
+        <div  className='input-group'>
+          <label  className='label'>Address</label>
           <input
             name="address"
             type="text"
@@ -151,11 +98,11 @@ function  RegistrationForm() {
             required
             value={user.address}
             onChange={userData}
-            style={inputStyle}
+             className='input'
           />
         </div>
-        <div style={inputGroupStyle}>
-          <label style={labelStyle}>Message</label>
+        <div  className='input-group'>
+          <label  className='label'>Message</label>
           <textarea
             name="message"
             placeholder="Enter your message"
@@ -163,11 +110,11 @@ function  RegistrationForm() {
             required
             value={user.message}
             onChange={userData}
-            style={textareaStyle}
+            className='textarea'
           />
         </div>
         <div>
-          <button type="submit" style={buttonStyle}>Submit</button>
+          <button type="submit" className='button'>Submit</button>
         </div>
       </form>
     </div>
